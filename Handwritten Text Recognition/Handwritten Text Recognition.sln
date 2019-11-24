@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handwritten Text Recognition", "Handwritten Text Recognition.csproj", "{920D2A37-6149-46AC-98A2-C31DFE5735BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "handwritten text recognition", "handwritten text recognition.csproj", "{312A4685-29F2-4C75-8650-A27B8BC4DFF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{920D2A37-6149-46AC-98A2-C31DFE5735BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{920D2A37-6149-46AC-98A2-C31DFE5735BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{920D2A37-6149-46AC-98A2-C31DFE5735BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{920D2A37-6149-46AC-98A2-C31DFE5735BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E0924C1A-E02C-4AF5-B0DA-9FCF1FD5E4FE}
+		SolutionGuid = {4A37B0E4-C37B-44D6-89C6-E4A9D66854D5}
 	EndGlobalSection
 EndGlobal

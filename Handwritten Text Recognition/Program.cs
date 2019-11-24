@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Handwritten_Text_Recognition
+namespace handwritten_text_recognition
 {
     static class Program
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Handwritten_Text_Recognition
+namespace handwritten_text_recognition
 {
     public partial class Form1 : Form
     {

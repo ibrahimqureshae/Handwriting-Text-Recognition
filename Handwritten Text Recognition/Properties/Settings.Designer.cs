@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Handwritten_Text_Recognition.Properties
+namespace handwritten_text_recognition.Properties
 {
 
 

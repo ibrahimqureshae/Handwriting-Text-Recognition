@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{920D2A37-6149-46AC-98A2-C31DFE5735BF}</ProjectGuid>
+    <ProjectGuid>{312A4685-29F2-4C75-8650-A27B8BC4DFF0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Handwritten_Text_Recognition</RootNamespace>
-    <AssemblyName>Handwritten Text Recognition</AssemblyName>
+    <RootNamespace>handwritten_text_recognition</RootNamespace>
+    <AssemblyName>handwritten text recognition</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

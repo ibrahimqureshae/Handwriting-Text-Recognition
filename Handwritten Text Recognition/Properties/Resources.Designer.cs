@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Handwritten_Text_Recognition.Properties
+namespace handwritten_text_recognition.Properties
 {
 
 
@@ -44,7 +44,7 @@ namespace Handwritten_Text_Recognition.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Handwritten_Text_Recognition.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("handwritten_text_recognition.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

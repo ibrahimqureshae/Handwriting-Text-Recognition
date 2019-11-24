@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Handwritten Text Recognition")]
+[assembly: AssemblyTitle("handwritten text recognition")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Handwritten Text Recognition")]
+[assembly: AssemblyProduct("handwritten text recognition")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("920d2a37-6149-46ac-98a2-c31dfe5735bf")]
+[assembly: Guid("312a4685-29f2-4c75-8650-a27b8bc4dff0")]
 
 // Version information for an assembly consists of the following four values:
 //
