@@ -20,7 +20,7 @@ namespace Handwriting_Trainer
         public float Number;
     }
 
-    
+
     class DigitPrediction
     {
         [ColumnName("Score")]
@@ -33,7 +33,7 @@ namespace Handwriting_Trainer
     {
 
         //dataset location
-        
+
         private static string trainDataPath = @"F:\Project Data\emnist\emnist-balanced-train.csv";
         private static string testDataPath = @"F:\Project Data\emnist\emnist-balanced-test.csv";
 
@@ -117,8 +117,11 @@ namespace Handwriting_Trainer
 
             // create a prediction engine
             var engine = context.Model.CreatePredictionEngine<Digit, DigitPrediction>(model);
+
             
-            context.Model.Save(model, trainData.Schema, modelPath);
+                context.Model.Save(model, trainDataView.Schema, "Model.zip");
+            
+
 
 
             // set up a table to show the predictions
@@ -131,6 +134,7 @@ namespace Handwriting_Trainer
             for (var i = 0; i < testDigits.Length; i++)
             {
                 var prediction = engine.Predict(testDigits[i]);
+
                 table.AddRow(
                     testDigits[i].Number,
                     prediction.Score[0].ToString("P2"),
@@ -180,14 +184,14 @@ namespace Handwriting_Trainer
             prediction.Score[44].ToString("P2"),
             prediction.Score[45].ToString("P2"),
             prediction.Score[46].ToString("P2"));
-        }
+            }
 
             // show results
             Console.WriteLine(table.ToString());
 
 
 
-           
+
 
 
 
