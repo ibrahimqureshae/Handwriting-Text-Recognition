@@ -73,7 +73,7 @@ namespace Handwriting_Trainer
         nameof(Digit.PixelValues)))
 
     // step 3: cache data to speed up training                
-    .AppendCacheCheckpoint(context)
+    //.AppendCacheCheckpoint(context)
 
     // step 4: train the model with SDCA
     .Append(context.MulticlassClassification.Trainers.SdcaMaximumEntropy(
@@ -118,9 +118,9 @@ namespace Handwriting_Trainer
             // create a prediction engine
             var engine = context.Model.CreatePredictionEngine<Digit, DigitPrediction>(model);
 
-            
-                context.Model.Save(model, trainDataView.Schema, "Model.zip");
-            
+
+            //context.Model.Save(model, trainDataView.Schema, "Model.zip");
+
 
 
 
@@ -199,4 +199,4 @@ namespace Handwriting_Trainer
         }
 
     }
-}
+    }

@@ -5,27 +5,57 @@ VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "handwritten text recognition", "handwritten text recognition.csproj", "{312A4685-29F2-4C75-8650-A27B8BC4DFF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handwriting Trainer", "..\Handwriting Trainer\Handwriting Trainer.csproj", "{12BB71EF-9878-4A91-BA86-ECFEECF16C91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Handwriting Trainer", "..\Handwriting Trainer\Handwriting Trainer.csproj", "{12BB71EF-9878-4A91-BA86-ECFEECF16C91}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1E765E4D-A6FF-45A3-B298-AA863C4E88FF}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NN", "..\NN\NN.csproj", "{3405297E-2F2B-4729-95AD-1D65F673B99A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNTKUtil", "..\CNTKUtil\CNTKUtil.csproj", "{ACD979A1-2140-4670-A165-7679EE30BC80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Debug|x64.Build.0 = Debug|Any CPU
 		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Release|x64.ActiveCfg = Release|Any CPU
+		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Release|x64.Build.0 = Release|Any CPU
 		{12BB71EF-9878-4A91-BA86-ECFEECF16C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{12BB71EF-9878-4A91-BA86-ECFEECF16C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12BB71EF-9878-4A91-BA86-ECFEECF16C91}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{12BB71EF-9878-4A91-BA86-ECFEECF16C91}.Debug|x64.Build.0 = Debug|Any CPU
 		{12BB71EF-9878-4A91-BA86-ECFEECF16C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12BB71EF-9878-4A91-BA86-ECFEECF16C91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12BB71EF-9878-4A91-BA86-ECFEECF16C91}.Release|x64.ActiveCfg = Release|Any CPU
+		{12BB71EF-9878-4A91-BA86-ECFEECF16C91}.Release|x64.Build.0 = Release|Any CPU
+		{3405297E-2F2B-4729-95AD-1D65F673B99A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3405297E-2F2B-4729-95AD-1D65F673B99A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3405297E-2F2B-4729-95AD-1D65F673B99A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3405297E-2F2B-4729-95AD-1D65F673B99A}.Debug|x64.Build.0 = Debug|Any CPU
+		{3405297E-2F2B-4729-95AD-1D65F673B99A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3405297E-2F2B-4729-95AD-1D65F673B99A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3405297E-2F2B-4729-95AD-1D65F673B99A}.Release|x64.ActiveCfg = Release|Any CPU
+		{3405297E-2F2B-4729-95AD-1D65F673B99A}.Release|x64.Build.0 = Release|Any CPU
+		{ACD979A1-2140-4670-A165-7679EE30BC80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACD979A1-2140-4670-A165-7679EE30BC80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACD979A1-2140-4670-A165-7679EE30BC80}.Debug|x64.ActiveCfg = Debug|x64
+		{ACD979A1-2140-4670-A165-7679EE30BC80}.Debug|x64.Build.0 = Debug|x64
+		{ACD979A1-2140-4670-A165-7679EE30BC80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACD979A1-2140-4670-A165-7679EE30BC80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACD979A1-2140-4670-A165-7679EE30BC80}.Release|x64.ActiveCfg = Release|x64
+		{ACD979A1-2140-4670-A165-7679EE30BC80}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
