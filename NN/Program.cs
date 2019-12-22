@@ -33,6 +33,44 @@ namespace NN
             Number == 7 ? 1.0f : 0.0f,
             Number == 8 ? 1.0f : 0.0f,
             Number == 9 ? 1.0f : 0.0f,
+             Number == 10 ? 1.0f : 0.0f,
+            Number == 11 ? 1.0f : 0.0f,
+            Number == 12 ? 1.0f : 0.0f,
+            Number == 13 ? 1.0f : 0.0f,
+            Number == 14 ? 1.0f : 0.0f,
+            Number == 15 ? 1.0f : 0.0f,
+            Number == 16 ? 1.0f : 0.0f,
+            Number == 17 ? 1.0f : 0.0f,
+            Number == 18 ? 1.0f : 0.0f,
+            Number == 19 ? 1.0f : 0.0f,
+             Number == 20 ? 1.0f : 0.0f,
+            Number == 21 ? 1.0f : 0.0f,
+            Number == 22 ? 1.0f : 0.0f,
+            Number == 23 ? 1.0f : 0.0f,
+            Number == 24 ? 1.0f : 0.0f,
+            Number == 25 ? 1.0f : 0.0f,
+            Number == 26 ? 1.0f : 0.0f,
+            Number == 27 ? 1.0f : 0.0f,
+            Number == 28 ? 1.0f : 0.0f,
+            Number == 29 ? 1.0f : 0.0f,
+             Number == 30 ? 1.0f : 0.0f,
+            Number == 31 ? 1.0f : 0.0f,
+            Number == 32 ? 1.0f : 0.0f,
+            Number == 33 ? 1.0f : 0.0f,
+            Number == 34 ? 1.0f : 0.0f,
+            Number == 35 ? 1.0f : 0.0f,
+            Number == 36 ? 1.0f : 0.0f,
+            Number == 37 ? 1.0f : 0.0f,
+            Number == 38 ? 1.0f : 0.0f,
+            Number == 39 ? 1.0f : 0.0f,
+             Number == 40 ? 1.0f : 0.0f,
+            Number == 41 ? 1.0f : 0.0f,
+            Number == 42 ? 1.0f : 0.0f,
+            Number == 43 ? 1.0f : 0.0f,
+            Number == 44 ? 1.0f : 0.0f,
+            Number == 45 ? 1.0f : 0.0f,
+            Number == 46 ? 1.0f : 0.0f,
+          
         };
     }
 
@@ -42,8 +80,8 @@ namespace NN
     class Program
     {
         // filenames for data set
-        private static string trainDataPath = (@"F:\Project Data\STUFF\mnist-in-csv\mnist_train.csv");
-        private static string testDataPath = (@"F:\Project Data\STUFF\mnist-in-csv\mnist_test.csv");
+        private static string trainDataPath = (@"F:\Project Data\emnist\Modified CSV\emnist-balanced-train.csv");
+        private static string testDataPath = (@"F:\Project Data\emnist\Modified CSV\emnist-balanced-test.csv");
 
         /// <summary>
         /// The main program entry point.
@@ -85,12 +123,12 @@ namespace NN
 
             // build features and labels
             var features = NetUtil.Var(new int[] { 28, 28 }, DataType.Float);
-            var labels = NetUtil.Var(new int[] { 10 }, DataType.Float);
+            var labels = NetUtil.Var(new int[] { 46 }, DataType.Float);
 
             // build the network
             var network = features
                 .Dense(512, CNTKLib.ReLU)
-                .Dense(10, CNTKLib.Softmax)
+                .Dense(46, CNTKLib.Softmax)
                 .ToNetwork();
             Console.WriteLine("Model architecture:");
             Console.WriteLine(network.ToSummary());
@@ -118,7 +156,7 @@ namespace NN
             Console.WriteLine("\tLoss\tError\tError");
             Console.WriteLine("-----------------------------");
 
-            var maxEpochs = 50;
+            var maxEpochs = 190;
             var batchSize = 128;
             var loss = new double[maxEpochs];
             var trainingError = new double[maxEpochs];
@@ -182,8 +220,12 @@ namespace NN
             Console.WriteLine($"Final test error: {finalError:0.00}");
             Console.WriteLine($"Final test accuracy: {1 - finalError:0.00}");
 
+
+
+
+           
             // plot the error graph
-var chart = Chart.Plot(
+            var chart = Chart.Plot(
     new[]
     {
         new Graph.Scatter()

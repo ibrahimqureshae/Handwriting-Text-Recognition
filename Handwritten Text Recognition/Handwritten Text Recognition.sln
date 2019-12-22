@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NN", "..\NN\NN.csproj", "{3405297E-2F2B-4729-95AD-1D65F673B99A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNTKUtil", "..\CNTKUtil\CNTKUtil.csproj", "{ACD979A1-2140-4670-A165-7679EE30BC80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CNTKUtil", "..\CNTKUtil\CNTKUtil.csproj", "{ACD979A1-2140-4670-A165-7679EE30BC80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,8 +24,8 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Debug|Any CPU.Build.0 = Debug|x64
 		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Debug|x64.Build.0 = Debug|Any CPU
 		{312A4685-29F2-4C75-8650-A27B8BC4DFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
