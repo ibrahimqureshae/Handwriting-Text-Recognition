@@ -30,30 +30,42 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
+            this.loadImageButton = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.recognizeTextLabel = new System.Windows.Forms.Label();
+            this.resultTextBox = new System.Windows.Forms.TextBox();
+            this.imageLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.imageGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.copyLabel = new System.Windows.Forms.Label();
+            this.copyTextButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.imageGroupBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // loadImageButton
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.ImageKey = "icons8-picture-50.png";
-            this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(27, 48);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(48, 47);
-            this.button1.TabIndex = 2;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.loadImageButton.BackColor = System.Drawing.Color.SlateGray;
+            this.loadImageButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.loadImageButton.ImageKey = "image_50px.png";
+            this.loadImageButton.ImageList = this.imageList1;
+            this.loadImageButton.Location = new System.Drawing.Point(10, 16);
+            this.loadImageButton.Name = "loadImageButton";
+            this.loadImageButton.Size = new System.Drawing.Size(46, 48);
+            this.loadImageButton.TabIndex = 2;
+            this.loadImageButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.loadImageButton, "Load Image From PC");
+            this.loadImageButton.UseVisualStyleBackColor = false;
+            this.loadImageButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // imageList1
             // 
@@ -106,62 +118,211 @@
             this.imageList1.Images.SetKeyName(44, "icons8-undelete-50.png");
             this.imageList1.Images.SetKeyName(45, "icons8-upload-to-the-cloud-50.png");
             this.imageList1.Images.SetKeyName(46, "machine learning.ico");
+            this.imageList1.Images.SetKeyName(47, "image_50px.png");
+            this.imageList1.Images.SetKeyName(48, "save_48px.png");
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(27, 116);
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 118);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(478, 398);
+            this.pictureBox1.Size = new System.Drawing.Size(535, 503);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // contextMenuStrip1
+            // openFileDialog1
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(93, 26);
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // pictureBox2
+            // recognizeTextLabel
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(511, 116);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(534, 398);
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
+            this.recognizeTextLabel.AutoSize = true;
+            this.recognizeTextLabel.BackColor = System.Drawing.Color.White;
+            this.recognizeTextLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.recognizeTextLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.recognizeTextLabel.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recognizeTextLabel.Location = new System.Drawing.Point(902, 585);
+            this.recognizeTextLabel.Name = "recognizeTextLabel";
+            this.recognizeTextLabel.Size = new System.Drawing.Size(165, 28);
+            this.recognizeTextLabel.TabIndex = 9;
+            this.recognizeTextLabel.Text = "Recognized Text";
             // 
-            // fileToolStripMenuItem
+            // resultTextBox
             // 
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
-            this.fileToolStripMenuItem.Text = "File";
+            this.resultTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.resultTextBox.Font = new System.Drawing.Font("UTM Avo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resultTextBox.Location = new System.Drawing.Point(553, 118);
+            this.resultTextBox.Multiline = true;
+            this.resultTextBox.Name = "resultTextBox";
+            this.resultTextBox.ReadOnly = true;
+            this.resultTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.resultTextBox.Size = new System.Drawing.Size(540, 503);
+            this.resultTextBox.TabIndex = 10;
+            // 
+            // imageLabel
+            // 
+            this.imageLabel.AutoSize = true;
+            this.imageLabel.BackColor = System.Drawing.Color.White;
+            this.imageLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imageLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.imageLabel.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imageLabel.Location = new System.Drawing.Point(463, 585);
+            this.imageLabel.Name = "imageLabel";
+            this.imageLabel.Size = new System.Drawing.Size(72, 28);
+            this.imageLabel.TabIndex = 9;
+            this.imageLabel.Text = "Image";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 66);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 19);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Add";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(2, 28);
+            this.label2.TabIndex = 9;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // imageGroupBox
+            // 
+            this.imageGroupBox.Controls.Add(this.loadImageButton);
+            this.imageGroupBox.Controls.Add(this.label1);
+            this.imageGroupBox.Location = new System.Drawing.Point(12, 627);
+            this.imageGroupBox.Name = "imageGroupBox";
+            this.imageGroupBox.Size = new System.Drawing.Size(535, 89);
+            this.imageGroupBox.TabIndex = 12;
+            this.imageGroupBox.TabStop = false;
+            this.imageGroupBox.Text = "Image ToolBox";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.saveButton);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.copyTextButton);
+            this.groupBox1.Controls.Add(this.copyLabel);
+            this.groupBox1.Location = new System.Drawing.Point(553, 628);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(535, 89);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Text ToolBox";
+            // 
+            // copyLabel
+            // 
+            this.copyLabel.AutoSize = true;
+            this.copyLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.copyLabel.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyLabel.Location = new System.Drawing.Point(20, 64);
+            this.copyLabel.Name = "copyLabel";
+            this.copyLabel.Size = new System.Drawing.Size(42, 19);
+            this.copyLabel.TabIndex = 9;
+            this.copyLabel.Text = "Copy";
+            // 
+            // copyTextButton
+            // 
+            this.copyTextButton.BackColor = System.Drawing.Color.SlateGray;
+            this.copyTextButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.copyTextButton.ImageKey = "icons8-inspection-50.png";
+            this.copyTextButton.ImageList = this.imageList1;
+            this.copyTextButton.Location = new System.Drawing.Point(19, 16);
+            this.copyTextButton.Name = "copyTextButton";
+            this.copyTextButton.Size = new System.Drawing.Size(46, 48);
+            this.copyTextButton.TabIndex = 2;
+            this.copyTextButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.copyTextButton, "Copy recognized text to Clipboard");
+            this.copyTextButton.UseVisualStyleBackColor = false;
+            this.copyTextButton.Click += new System.EventHandler(this.copyButton_click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(84, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 19);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Save as";
+            // 
+            // saveButton
+            // 
+            this.saveButton.BackColor = System.Drawing.Color.SlateGray;
+            this.saveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.saveButton.ImageKey = "save_48px.png";
+            this.saveButton.ImageList = this.imageList1;
+            this.saveButton.Location = new System.Drawing.Point(89, 16);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(46, 48);
+            this.saveButton.TabIndex = 2;
+            this.saveButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.saveButton, "Save recognized text as document");
+            this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1057, 566);
-            this.Controls.Add(this.pictureBox2);
+            this.BackColor = System.Drawing.Color.SlateGray;
+            this.ClientSize = new System.Drawing.Size(1105, 728);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.imageGroupBox);
+            this.Controls.Add(this.recognizeTextLabel);
+            this.Controls.Add(this.resultTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.imageLabel);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Handwritten Text Classification";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Handwriting Recognizer   ( Beta Version 0.9.1 )";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.imageGroupBox.ResumeLayout(false);
+            this.imageGroupBox.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button loadImageButton;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label recognizeTextLabel;
+        private System.Windows.Forms.TextBox resultTextBox;
+        private System.Windows.Forms.Label imageLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.GroupBox imageGroupBox;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button copyTextButton;
+        private System.Windows.Forms.Label copyLabel;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

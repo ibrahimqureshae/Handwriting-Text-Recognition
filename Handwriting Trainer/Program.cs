@@ -34,8 +34,8 @@ namespace Handwriting_Trainer
 
         //dataset location
 
-        private static string trainDataPath = @"F:\Project Data\emnist\emnist-balanced-train.csv";
-        private static string testDataPath = @"F:\Project Data\emnist\emnist-balanced-test.csv";
+        private static string trainDataPath = @"F:\Project Data\emnist\Modified CSV\emnist-balanced-train.csv";
+        private static string testDataPath = @"F:\Project Data\emnist\Modified CSV\emnist-balanced-test.csv";
 
 
         static void Main(string[] args)
@@ -119,7 +119,7 @@ namespace Handwriting_Trainer
             var engine = context.Model.CreatePredictionEngine<Digit, DigitPrediction>(model);
 
 
-            //context.Model.Save(model, trainDataView.Schema, "Model.zip");
+            context.Model.Save(model, trainDataView.Schema, "Model.zip");
 
 
 
@@ -182,8 +182,8 @@ namespace Handwriting_Trainer
             prediction.Score[42].ToString("P2"),
             prediction.Score[43].ToString("P2"),
             prediction.Score[44].ToString("P2"),
-            prediction.Score[45].ToString("P2"),
-            prediction.Score[46].ToString("P2"));
+            prediction.Score[45].ToString("P2"));
+          
             }
 
             // show results
@@ -197,6 +197,10 @@ namespace Handwriting_Trainer
 
 
         }
+
+
+
+        
 
     }
     }
