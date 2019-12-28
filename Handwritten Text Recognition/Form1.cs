@@ -162,11 +162,16 @@ namespace handwritten_text_recognition
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.Default;
+            drawingModeLabel.Visible = false;
+            imageModeLabel.Visible = true;// changes image label back to default
+            Cursor = Cursors.Default; // changes cursor back to default.
+
+            //hide draw mode buttons
             drawModeRecognizeButton.Visible = false;
             ClearButton.Visible = false;
             recognizeTextButtonLabel.Visible = false;
             clearButtonLabel.Visible = false;
+            //hide draw mode buttons
             resultTextBox.Clear(); // clears the textBox for another incoming picture
             drawMode = false; // disables the draw mode
             string imageFilePath = "";
@@ -247,6 +252,8 @@ namespace handwritten_text_recognition
 
         private void drawMode_click(object sender, EventArgs e)
         {
+            drawingModeLabel.Visible = true;
+            imageModeLabel.Visible = false;
             Cursor = Cursors.Hand;
             drawModeRecognizeButton.Visible = true;
             ClearButton.Visible = true;

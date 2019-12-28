@@ -34,7 +34,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.recognizeTextLabel = new System.Windows.Forms.Label();
             this.resultTextBox = new System.Windows.Forms.TextBox();
-            this.imageLabel = new System.Windows.Forms.Label();
+            this.drawingModeLabel = new System.Windows.Forms.Label();
             this.addButtonLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -55,6 +55,7 @@
             this.imageBox = new System.Windows.Forms.PictureBox();
             this.clearButtonLabel = new System.Windows.Forms.Label();
             this.ClearButton = new System.Windows.Forms.Button();
+            this.imageModeLabel = new System.Windows.Forms.Label();
             this.imageGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
@@ -144,18 +145,19 @@
             this.resultTextBox.Size = new System.Drawing.Size(540, 503);
             this.resultTextBox.TabIndex = 10;
             // 
-            // imageLabel
+            // drawingModeLabel
             // 
-            this.imageLabel.AutoSize = true;
-            this.imageLabel.BackColor = System.Drawing.Color.White;
-            this.imageLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imageLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.imageLabel.Font = new System.Drawing.Font("Roboto Lt", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.imageLabel.Location = new System.Drawing.Point(477, 570);
-            this.imageLabel.Name = "imageLabel";
-            this.imageLabel.Size = new System.Drawing.Size(55, 21);
-            this.imageLabel.TabIndex = 9;
-            this.imageLabel.Text = "Image";
+            this.drawingModeLabel.AutoSize = true;
+            this.drawingModeLabel.BackColor = System.Drawing.Color.White;
+            this.drawingModeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.drawingModeLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawingModeLabel.Font = new System.Drawing.Font("Roboto Lt", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drawingModeLabel.Location = new System.Drawing.Point(420, 570);
+            this.drawingModeLabel.Name = "drawingModeLabel";
+            this.drawingModeLabel.Size = new System.Drawing.Size(116, 21);
+            this.drawingModeLabel.TabIndex = 9;
+            this.drawingModeLabel.Text = "Drawing Board";
+            this.drawingModeLabel.Visible = false;
             // 
             // addButtonLabel
             // 
@@ -410,6 +412,19 @@
             this.ClearButton.Visible = false;
             this.ClearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
+            // imageModeLabel
+            // 
+            this.imageModeLabel.AutoSize = true;
+            this.imageModeLabel.BackColor = System.Drawing.Color.White;
+            this.imageModeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imageModeLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.imageModeLabel.Font = new System.Drawing.Font("Roboto Lt", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imageModeLabel.Location = new System.Drawing.Point(481, 570);
+            this.imageModeLabel.Name = "imageModeLabel";
+            this.imageModeLabel.Size = new System.Drawing.Size(55, 21);
+            this.imageModeLabel.TabIndex = 9;
+            this.imageModeLabel.Text = "Image";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,7 +438,8 @@
             this.Controls.Add(this.resultTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.imageLabel);
+            this.Controls.Add(this.imageModeLabel);
+            this.Controls.Add(this.drawingModeLabel);
             this.Controls.Add(this.imageBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -450,7 +466,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label recognizeTextLabel;
         private System.Windows.Forms.TextBox resultTextBox;
-        private System.Windows.Forms.Label imageLabel;
+        private System.Windows.Forms.Label drawingModeLabel;
         private System.Windows.Forms.Label addButtonLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolTip toolTip1;
@@ -469,6 +485,7 @@
         private System.Windows.Forms.Label recognizeTextButtonLabel;
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Label clearButtonLabel;
+        private System.Windows.Forms.Label imageModeLabel;
     }
 }
 
