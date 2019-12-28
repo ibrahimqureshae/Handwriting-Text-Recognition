@@ -1,6 +1,4 @@
-﻿using Emgu.CV;
-using Emgu.CV.Structure;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Drawing;
@@ -10,7 +8,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Drawing.Drawing2D;
 
 namespace handwritten_text_recognition
 {
@@ -18,13 +16,14 @@ namespace handwritten_text_recognition
 
     public partial class Form1 : Form
     {
-        private string result;
+        private string result; // response is saved here
+        Point lastPoint = Point.Empty;//Point.Empty represents null for a Point object
+        bool drawMode = new Boolean();
+        bool isMouseDown = new Boolean();
 
-       
 
         // Add your Computer Vision subscription key and endpoint to your environment variables.
         static string subscriptionKey = Environment.GetEnvironmentVariable("COMPUTER_VISION_SUBSCRIPTION_KEY");
-
         static string endpoint = Environment.GetEnvironmentVariable("COMPUTER_VISION_ENDPOINT");
 
         // the Batch Read method endpoint
@@ -146,9 +145,7 @@ namespace handwritten_text_recognition
 
                 
 
-                //// Display the JSON response.
-                //Console.WriteLine("\nResponse:\n\n{0}\n",
-                //    JToken.Parse(contentString).ToString());
+              
             }
             catch (Exception e)
             {
@@ -158,72 +155,240 @@ namespace handwritten_text_recognition
         public Form1()
         {
             result = "";
-            
 
+            drawMode = false;
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            Cursor = Cursors.Default;
+            drawModeRecognizeButton.Visible = false;
+            ClearButton.Visible = false;
+            recognizeTextButtonLabel.Visible = false;
+            clearButtonLabel.Visible = false;
+            resultTextBox.Clear(); // clears the textBox for another incoming picture
+            drawMode = false; // disables the draw mode
             string imageFilePath = "";
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 Bitmap obj = new Bitmap(ofd.FileName);
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBox1.Image = (Image)obj;
-                //imgInput = new Image<Bgr, byte>(ofd.FileName);
-                //pictureBox1.Image = imgInput.Bitmap;
+                imageBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                imageBox.Image = (Image)obj;
                 imageFilePath = ofd.FileName;
             }
 
-            // Get the path and filename to process from the user.
-            Console.WriteLine("Text Recognition:");
-            Console.Write("Enter the path to an image with text you wish to read: ");
+            
             
 
             if (File.Exists(imageFilePath))
             {
                 // Call the REST API method.
-                Console.WriteLine("\nWait a moment for the results to appear.\n");
+                
                 ReadText(imageFilePath).Wait();
                 resultTextBox.Text = result;
+
                 //SetTextboxTextSafe(result);
             }
             else
             {
-                Console.WriteLine("\nInvalid file path");
+                MessageBox.Show("Invalid Image Path", "Path Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            Console.WriteLine("\nPress Enter to exit...");
-            Console.ReadLine();
-
-
-        }
-
-       //public  void SetTextboxTextSafe(string result)
-       // {
             
-       //    resultLabel.Text = result.ToString();
-       // }
 
-
-
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-           
         }
+
+       
+
+
+
+       
 
         private void copyButton_click(object sender, EventArgs e)
         {
-            Clipboard.SetText(resultTextBox.Text);
+            if(resultTextBox.Text != "")
+            {
+
+                Clipboard.SetText(resultTextBox.Text);
+            }
+            else
+            {
+                MessageBox.Show("Please Load or Draw Image First", "No Text", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void saveButton_click(object sender, EventArgs e)
         {
 
+            saveFileDialog1.Filter = "Text File | *.txt";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+
+            {
+
+                StreamWriter writer = new StreamWriter(saveFileDialog1.OpenFile());
+
+               
+
+                    writer.WriteLine(resultTextBox.Text);
+
+                
+
+                writer.Dispose();
+
+                writer.Close();
+
+            }
+
+
+
+        }
+
+        private void drawMode_click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+            drawModeRecognizeButton.Visible = true;
+            ClearButton.Visible = true;
+            recognizeTextButtonLabel.Visible = true;
+            clearButtonLabel.Visible = true;
+            imageBox.Image = (handwritten_text_recognition.Properties.Resources.asd);
+
+
+
+
+            
+            resultTextBox.Clear();
+            //pictureBox1.Image = null;
+            drawMode = true;
+            if (imageBox.Image == null)//if no available bitmap exists on the picturebox to draw on
+
+            {
+                //create a new bitmap
+                Bitmap bmp = new Bitmap(imageBox.Width, imageBox.Height);
+
+                imageBox.Image = bmp; //assign the picturebox.Image property to the bitmap created
+
+            }
+
+
+
+
+
+
+
+
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (drawMode == true)
+            {
+
+            lastPoint = e.Location;//we assign the lastPoint to the current mouse position: e.Location ('e' is from the MouseEventArgs passed into the MouseDown event)
+
+            isMouseDown = true;//we set to true because our mouse button is down (clicked)
+            }
+
+
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isMouseDown == true)//check to see if the mouse button is down
+
+            {
+
+                if (lastPoint != null)//if our last point is not null, which in this case we have assigned above
+
+                {
+
+                    if (imageBox.Image == null)//if no available bitmap exists on the picturebox to draw on
+
+                    {
+                        //create a new bitmap
+                        Bitmap bmp = new Bitmap(imageBox.Width, imageBox.Height);
+
+                        imageBox.Image = bmp; //assign the picturebox.Image property to the bitmap created
+
+                    }
+
+                    using (Graphics g = Graphics.FromImage(imageBox.Image))
+
+                    {//we need to create a Graphics object to draw on the picture box, its our main tool
+
+                        //when making a Pen object, you can just give it color only or give it color and pen size
+
+                        g.DrawLine(new Pen(Color.Black, 2), lastPoint, e.Location);
+                        g.SmoothingMode = SmoothingMode.AntiAlias;
+                        //this is to give the drawing a more smoother, less sharper look
+
+                    }
+
+                    imageBox.Invalidate();//refreshes the picturebox
+
+                    lastPoint = e.Location;//keep assigning the lastPoint to the current mouse position
+
+                }
+
+            }
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+
+            if(drawMode == true)
+            {
+
+
+            isMouseDown = false;
+
+            lastPoint = Point.Empty;
+            }
+        }
+
+        private void drawModeRecognizeButton_click(object sender, EventArgs e)
+        {
+            string tempPath = Path.GetTempPath();
+            tempPath = tempPath + "file.jpeg";
+
+            //string tempPath = @"F:\OneDrive - Higher Education Commission\Desktop\plain-white-background.jpg";
+            imageBox.Image.Save(tempPath);
+
+
+            string imageFilePath = tempPath;
+
+            
+                
+                
+
+            
+
+
+            if (File.Exists(imageFilePath))
+            {
+                // Call the REST API method.
+                
+                ReadText(imageFilePath).Wait();
+                resultTextBox.Text = result;
+
+                //SetTextboxTextSafe(result);
+            }
+            else
+            {
+                MessageBox.Show("Invalid Image Path", "Path Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            imageBox.Image = (handwritten_text_recognition.Properties.Resources.asd);
         }
     }
 }
