@@ -1,4 +1,4 @@
-# handwritten-text-recognition
+#Handwriting recogntion through computer vision REST API ( Microsoft Azure )
 handwriting recogntion through computer vision REST API ( Microsoft Azure )
 
 ![Screenshot (1)](https://user-images.githubusercontent.com/38296248/71597964-ff69be00-2b66-11ea-8503-0893e182dcca.png)
