@@ -15,3 +15,6 @@ Details Coming Soon!
 ![Screenshot (8)](https://user-images.githubusercontent.com/38296248/71597982-04c70880-2b67-11ea-83d9-11804997dd88.png)
 
 ![Screenshot (7)](https://user-images.githubusercontent.com/38296248/71597981-0395db80-2b67-11ea-8d01-3e56979c1e79.png)
+
+
+Project files includes Training through machine learning but was discontinued and later used the microsoft API.
