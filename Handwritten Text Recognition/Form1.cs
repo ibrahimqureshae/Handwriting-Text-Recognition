@@ -362,9 +362,9 @@ namespace handwritten_text_recognition
         private void drawModeRecognizeButton_click(object sender, EventArgs e)
         {
             string tempPath = Path.GetTempPath();
-            tempPath = tempPath + "file.jpeg";
+            tempPath = tempPath + "file.jpeg"; // gets temp folder path to save the drawing and then process it
 
-            //string tempPath = @"F:\OneDrive - Higher Education Commission\Desktop\plain-white-background.jpg";
+            
             imageBox.Image.Save(tempPath);
 
 
