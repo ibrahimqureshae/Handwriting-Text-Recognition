@@ -1,6 +1,5 @@
 # Handwriting recognition through computer vision REST API ( Microsoft Azure )
-Screenshots ( WIll be updated later) 
-Details Coming Soon!
+you can find read more about Microsoft Azure's REST API [here](https://learn.microsoft.com/en-us/rest/api/azure/)
 
 ![Screenshot (1)](https://user-images.githubusercontent.com/38296248/71597964-ff69be00-2b66-11ea-8503-0893e182dcca.png)
 
